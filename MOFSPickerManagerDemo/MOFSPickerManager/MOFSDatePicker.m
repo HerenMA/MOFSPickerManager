@@ -11,6 +11,11 @@
 #define UISCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+/// iPhone X / iPhone XS / iPhone XR / iPhone 11 / iPhone 12
+#define HR_iPhoneX (@available(iOS 11.0, *) ? [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.f ? YES : NO : NO)
+/// Tabbar safe bottom margin.
+#define HR_TabbarSafeBottomMargin (HR_iPhoneX ? 34.f : 0.f)
+
 @interface MOFSDatePicker()
 
 @property (nonatomic, strong) NSMutableDictionary *recordDic;
@@ -36,7 +41,7 @@
     
     CGRect initialFrame;
     if (CGRectIsEmpty(frame)) {
-        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216);
+        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216 + HR_TabbarSafeBottomMargin);
     } else {
         initialFrame = frame;
     }
