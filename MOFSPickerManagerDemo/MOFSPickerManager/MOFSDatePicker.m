@@ -44,6 +44,11 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.datePickerMode = UIDatePickerModeDate;
+        if (@available(iOS 13.4, *)) {
+            self.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        } else {
+            // Fallback on earlier versions
+        }
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
         [self initBgView];
