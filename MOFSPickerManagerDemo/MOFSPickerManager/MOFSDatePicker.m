@@ -41,7 +41,7 @@
     
     CGRect initialFrame;
     if (CGRectIsEmpty(frame)) {
-        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216 + HR_TabbarSafeBottomMargin);
+        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216);
     } else {
         initialFrame = frame;
     }
@@ -74,7 +74,7 @@
 }
 
 - (void)initBgView {
-    self.bgView = [[UIView alloc] initWithFrame:CGRectMake(0, UISCREEN_HEIGHT - self.frame.size.height - 44, UISCREEN_WIDTH, self.frame.size.height + self.toolBar.frame.size.height)];
+    self.bgView = [[UIView alloc] initWithFrame:CGRectMake(0, UISCREEN_HEIGHT - self.frame.size.height - HR_TabbarSafeBottomMargin - 44, UISCREEN_WIDTH, self.frame.size.height + HR_TabbarSafeBottomMargin + self.toolBar.frame.size.height)];
     self.bgView.backgroundColor = [UIColor whiteColor];
 }
 
