@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MOFSPickerManager"
-  s.version      = "1.0.9"
+  s.version      = "1.1.0"
   s.summary      = "PickerManager for iOS"
   s.description  = <<-DESC
     iOS PickerView整合，一行代码调用（省市区三级联动+日期选择+普通选择）

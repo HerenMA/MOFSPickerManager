@@ -76,8 +76,8 @@
 - (void)initContainerView {
     self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, UISCREEN_HEIGHT)];
     self.containerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
-    self.containerView.userInteractionEnabled = YES;
-    [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWithAnimation)]];
+    // self.containerView.userInteractionEnabled = YES;
+    // [self.containerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenWithAnimation)]];
 }
 
 - (void)initBgView {
